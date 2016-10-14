@@ -1,6 +1,7 @@
 import Test.Hspec
 import Test.QuickCheck
 import Control.Exception (evaluate)
+import Lib
 
 main :: IO ()
 main = hspec $ do
@@ -13,3 +14,8 @@ main = hspec $ do
 
     it "throws an exception if used with an empty list" $ do
       evaluate (head []) `shouldThrow` anyException
+
+
+  describe "lib.fun.test" $ do
+    it "returns the sum of int+string add" $ do
+     fun 2 "b" `shouldBe` "2b"
