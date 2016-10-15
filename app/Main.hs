@@ -2,6 +2,11 @@ module Main where
 
 import Lib
 
-main :: IO ()
 
-main = print(fun 2 "b")
+s = for [1..5] $ \x -> show x
+
+main :: IO ()
+main = do 
+       print(s)
+       print(fun e "b")
+       where e = 3
